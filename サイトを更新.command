@@ -39,7 +39,7 @@ if [ -z "$(git status --porcelain)" ]; then
 fi
 
 echo "変更されたファイル："
-git status --short
+git -c core.quotePath=false status --short
 echo ""
 
 read -r -p "何を変えたか、ひとこと（空のまま Enter でも大丈夫です）： " message
