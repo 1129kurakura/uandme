@@ -16,7 +16,7 @@
 
 .intro-on .intro {
   --intro-speed: 1;
-  --draw-end: calc(2.9s * var(--intro-speed)); /* ロゴを描き終えて、ひと呼吸おいた時点 */
+  --draw-end: calc(2.1s * var(--intro-speed)); /* ロゴを描き終えて、ひと呼吸おいた時点 */
 
   position: fixed;
   inset: 0;
@@ -67,37 +67,58 @@
 
 .intro__logo {
   position: relative;
-  width: min(72vw, 34rem);
+  width: min(78vw, 38rem);
   height: auto;
-  fill: none;
-  stroke: var(--ink);
-  stroke-width: 5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
+  overflow: visible;
+  /* ヘッダーのロゴ（.logo）と同じ書体・太さ・字間 */
+  font-family: var(--font-latin);
+  font-size: 150px;
+  font-weight: 700;
+  letter-spacing: -0.03em;
   animation: intro-logo-out calc(1.1s * var(--intro-speed)) ease-in var(--draw-end) forwards;
 }
 
-/* 線の長さを 1 にそろえてあるので（pathLength="1"）、ずらす量を 1 → 0 にすると線が描かれる */
-.intro__stroke {
-  stroke-dasharray: 1;
-  stroke-dashoffset: 1;
-  animation: intro-draw calc(var(--duration) * var(--intro-speed)) cubic-bezier(0.45, 0, 0.3, 1) calc(var(--delay) * var(--intro-speed))
-    forwards;
+/* 1文字ずつ：輪郭の線をなぞり（intro-draw）、追いかけるように中を塗る（intro-fill） */
+.intro__letter {
+  --letter-gap: 0.16s; /* 次の文字が描きはじめるまでの間隔。小さくすると詰まる */
+  --delay: calc(0.3s + var(--letter-gap) * var(--order));
+
+  fill: var(--ink);
+  fill-opacity: 0;
+  stroke: var(--ink);
+  stroke-width: 3;
+  stroke-linejoin: round;
+  stroke-dasharray: 1100;
+  stroke-dashoffset: 1100;
+  animation:
+    intro-draw calc(0.9s * var(--intro-speed)) cubic-bezier(0.45, 0, 0.3, 1) calc(var(--delay) * var(--intro-speed)) forwards,
+    intro-fill calc(0.45s * var(--intro-speed)) ease-out calc((var(--delay) + 0.4s) * var(--intro-speed)) forwards;
 }
 
-.intro__stroke--u {
-  --delay: 0.35s;
-  --duration: 0.55s;
+.intro__letter--amp {
+  font-weight: 300;
 }
 
-.intro__stroke--amp {
-  --delay: 0.95s;
-  --duration: 0.7s;
+.intro__letter--1 {
+  --order: 0;
 }
 
-.intro__stroke--me {
-  --delay: 1.7s;
-  --duration: 0.9s;
+.intro__letter--2 {
+  --order: 1;
+}
+
+.intro__letter--3 {
+  --order: 2;
+}
+
+.intro__letter--4 {
+  --order: 3;
+}
+
+/* ロゴの書体が読み込まれるまで、全体を止めて待つ（別の書体で描きはじめないように） */
+.intro-on:not(.intro-play) .intro,
+.intro-on:not(.intro-play) .intro * {
+  animation-play-state: paused;
 }
 
 /* クリックやキー操作で飛ばしたとき */
@@ -108,6 +129,12 @@
 @keyframes intro-draw {
   to {
     stroke-dashoffset: 0;
+  }
+}
+
+@keyframes intro-fill {
+  to {
+    fill-opacity: 1;
   }
 }
 

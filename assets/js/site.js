@@ -256,6 +256,7 @@
   /* ---------- オープニング（流すかどうかは boot.js が決める） ---------- */
 
   const INTRO_SKIP_MS = 350;
+  const INTRO_FONT_WAIT_MS = 1500;
   const INTRO_FALLBACK_MS = 12000;
 
   const setupIntro = () => {
@@ -267,7 +268,7 @@
     const finish = () => {
       if (isFinished) return;
       isFinished = true;
-      html.classList.remove('intro-on');
+      html.classList.remove('intro-on', 'intro-play');
       intro.remove();
       document.removeEventListener('keydown', skip);
       try {
@@ -277,9 +278,18 @@
       }
     };
     function skip() {
+      html.classList.add('intro-play');
       intro.classList.add('is-skipping');
       window.setTimeout(finish, INTRO_SKIP_MS);
     }
+
+    // ロゴの書体が読み込めてから動かしはじめる（遅いときは待たずに始める）
+    const play = () => html.classList.add('intro-play');
+    const fontsReady = document.fonts
+      ? Promise.all([document.fonts.load('700 1em "Bricolage Grotesque"'), document.fonts.load('300 1em "Bricolage Grotesque"')])
+      : Promise.resolve();
+    fontsReady.then(play, play);
+    window.setTimeout(play, INTRO_FONT_WAIT_MS);
 
     // 霧が晴れきったら片付ける
     intro.addEventListener('animationend', (event) => {
