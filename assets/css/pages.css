@@ -222,6 +222,13 @@ main {
   color: var(--ink-soft);
 }
 
+.w-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+}
+
 .w-item__by {
   align-self: flex-start;
   margin-top: auto;
