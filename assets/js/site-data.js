@@ -34,7 +34,7 @@ window.SITE = {
       id: 'yumelist',
       name: 'ゆめリス',
       latin: 'u&meList',
-      catch: '「いつか行こうね」を、叶えて残す。',
+      catch: '「いつか行こうね」を、叶えて残す。ゆめをリストに。',
       summary: 'カップルやサークルのための、クローズドな夢リストアプリ。',
       status: 'デモ公開中',
       page: 'products/yumelist.html',
@@ -44,7 +44,7 @@ window.SITE = {
       id: 'furatto',
       name: 'ふらっと',
       latin: '仮称',
-      catch: '空いた時間の行き先が、1分で決まる。',
+      catch: '空いた時間の行き先が、1分で決まる。おでかけの壁をふらっとに。',
       summary: 'その時間すいているお店をつないで、お出かけプランにするアプリ。',
       status: 'デモ公開中',
       page: 'products/furatto.html',
@@ -70,7 +70,7 @@ window.SITE = {
   news: [
     {
       date: '2026.10',
-      text: '「ふらっと（仮）」のデモを公開しました。',
+      text: '「ふらっと」のデモを公開しました。',
       link: 'https://1129kurakura.github.io/furatto-mvp/',
     },
     {
