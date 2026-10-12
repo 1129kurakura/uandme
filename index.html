@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; object-src 'none'"
+    />
+    <title>u&amp;me｜「行きたい」を、「行った」に。</title>
+    <meta
+      name="description"
+      content="u&me は、出かける手前にある小さな面倒をなくすプロダクトをつくる学生団体です。ゆめリス、ふらっと、都市3Dマップを開発しています。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="u&me｜「行きたい」を、「行った」に。" />
+    <meta property="og:description" content="出かける手前にある小さな面倒をなくすプロダクトをつくる学生団体です。" />
+    <meta name="theme-color" content="#f4f2ed" />
+    <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/pages.css" />
+    <script src="assets/js/boot.js"></script>
+  </head>
+  <body data-root="">
+    <header class="site-header" id="site-header"></header>
+
+    <main>
+      <!-- ============ ヒーロー ============ -->
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="wrap">
+          <p class="hero__eyebrow">学生団体 u&amp;me</p>
+          <h1 class="hero__title" id="hero-title">
+            <span>「行きたい」を、</span>
+            <span>「行った」に。</span>
+          </h1>
+          <div class="hero__foot">
+            <p class="hero__lead">
+              u&amp;me は、出かける手前にある小さな面倒を、プロダクトでなくしていく学生団体です。
+            </p>
+            <a class="button" href="#products">プロダクトを見る <span class="arrow" aria-hidden="true">↓</span></a>
+          </div>
+        </div>
+
+        <ul class="stage wrap">
+          <li data-reveal>
+            <a class="stage-card tone-yume" href="products/yumelist.html">
+              <span class="stage-card__name">ゆめリス</span>
+              <span class="stage-card__meta">約束を、予定に変える <span class="arrow" aria-hidden="true">→</span></span>
+              <img
+                class="phone"
+                src="assets/img/yume-home.webp"
+                alt="ゆめリスのホーム画面"
+                width="640"
+                height="1386"
+                fetchpriority="high"
+              />
+            </a>
+          </li>
+          <li data-reveal>
+            <a class="stage-card tone-furatto" href="products/furatto.html">
+              <span class="stage-card__name">ふらっと</span>
+              <span class="stage-card__meta">空き時間の行き先を決める <span class="arrow" aria-hidden="true">→</span></span>
+              <img class="phone" src="assets/img/furatto-home.webp" alt="ふらっとのホーム画面" width="640" height="1386" />
+            </a>
+          </li>
+          <li data-reveal>
+            <a class="stage-card tone-city3d" href="products/city3d.html">
+              <span class="stage-card__name">都市3Dマップ</span>
+              <span class="stage-card__meta">駅の中を立体で案内する <span class="arrow" aria-hidden="true">→</span></span>
+              <img
+                class="phone"
+                src="assets/img/city3d-phone.webp"
+                alt="調布駅の立体構内マップをスマホで表示した画面"
+                width="640"
+                height="1386"
+              />
+            </a>
+          </li>
+        </ul>
+      </section>
+
+      <!-- ============ 私たちについて ============ -->
+      <section class="section wrap" id="about" aria-labelledby="about-title">
+        <div class="about__grid">
+          <div class="section__head" data-reveal>
+            <p class="label">About</p>
+            <h2 class="about__title" id="about-title">つくっているのは、<br />動き出すきっかけです。</h2>
+          </div>
+          <div class="prose" data-reveal>
+            <p>
+              行きたい場所ややりたいことは、たいてい思いついたところで止まります。日程が合わない、店が決まらない、駅で迷う。理由は、小さな面倒の積み重ねです。
+            </p>
+            <p>
+              そこで私たちは、その面倒を一つずつ引き受けるプロダクトをつくっています。約束を予定に変える「ゆめリス」、空き時間の行き先が決まる「ふらっと」、駅の中を立体で案内する「都市3Dマップ」の3つです。
+            </p>
+            <p>どれも、人が実際に出かけるところまでを見届けるための道具です。</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ プロダクト（中身は assets/js/site-data.js の products） ============ -->
+      <section class="section wrap" id="products" aria-labelledby="products-title">
+        <div class="section__head" data-reveal>
+          <p class="label">Products</p>
+          <h2 class="section__title" id="products-title">いま取り組んでいる、3つのプロダクト。</h2>
+        </div>
+        <ul class="product-list" data-products></ul>
+        <p class="product-list__note">プロダクトは、これからも増えていきます。</p>
+      </section>
+
+      <!-- ============ これから ============ -->
+      <section class="vision" id="vision" aria-labelledby="vision-title">
+        <div class="wrap">
+          <p class="label label--light" data-reveal>Next</p>
+          <h2 class="vision__title" id="vision-title" data-reveal>学生団体から、<br />株式会社へ。</h2>
+          <div class="prose vision__text" data-reveal>
+            <p>u&amp;me は、法人化を目指しています。</p>
+            <p>
+              お店や自治体、施設の方々と長く一緒に仕事をするには、責任を持てる組織である必要があるからです。いまはデモを触ってもらい、身近なところで試し、使われ方を確かめている段階です。
+            </p>
+            <p>確かめられたものから順に、事業として育てていきます。</p>
+          </div>
+          <ol class="steps">
+            <li class="step" data-reveal>
+              <p class="step__no">01</p>
+              <h3 class="step__title">つくる</h3>
+              <p class="step__text">動くデモを公開し、まず触ってもらう。</p>
+            </li>
+            <li class="step" data-reveal>
+              <p class="step__no">02</p>
+              <h3 class="step__title">確かめる</h3>
+              <p class="step__text">小さく試して、本当に使われるかを見る。</p>
+            </li>
+            <li class="step" data-reveal>
+              <p class="step__no">03</p>
+              <h3 class="step__title">会社にする</h3>
+              <p class="step__text">続けられる形に整えて、法人化する。</p>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ 活動（中身は assets/js/site-data.js の news） ============ -->
+      <section class="section wrap" id="news" aria-labelledby="news-title">
+        <div class="section__head" data-reveal>
+          <p class="label">Activity</p>
+          <h2 class="section__title" id="news-title">これまでの活動。</h2>
+        </div>
+        <ul class="news" data-news></ul>
+      </section>
+
+      <!-- ============ メンバーへ ============ -->
+      <section class="section wrap" aria-label="メンバー">
+        <a class="people-link" href="members.html" data-reveal>
+          つくっている人を見る <span class="arrow" aria-hidden="true">→</span>
+        </a>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="assets/js/site-data.js"></script>
+    <script src="assets/js/site.js"></script>
+  </body>
+</html>

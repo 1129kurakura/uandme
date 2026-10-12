@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; object-src 'none'"
+    />
+    <title>ふらっと（仮）｜u&amp;me</title>
+    <meta
+      name="description"
+      content="空いた時間の行き先が、1分で決まる。その時間すいているお店をつないで、お出かけプランにするアプリです。"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ふらっと（仮）｜u&me" />
+    <meta name="theme-color" content="#f4f2ed" />
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/pages.css" />
+    <script src="../assets/js/boot.js"></script>
+  </head>
+  <body data-root="../">
+    <header class="site-header" id="site-header"></header>
+
+    <main class="tone-furatto">
+      <!-- ============ 紹介 ============ -->
+      <section class="wrap" aria-labelledby="product-title">
+        <p class="crumb"><a href="../index.html#products">プロダクト</a><span>/</span><span>02</span></p>
+        <h1 class="product-hero__name" id="product-title">ふらっと<small>仮称</small></h1>
+        <div class="product-hero__foot">
+          <div>
+            <p class="product-hero__catch">空いた時間の行き先が、1分で決まる。</p>
+            <p class="product-hero__lead">
+              「今日・この時間・ここから」を入れると、その時間すいているお店をつないだお出かけプランができるアプリです。
+            </p>
+          </div>
+          <div class="product-hero__actions">
+            <a class="button" href="https://1129kurakura.github.io/furatto-mvp/" target="_blank" rel="noopener">
+              デモを触る <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            <span class="product-hero__hint">登録なしで試せます</span>
+          </div>
+        </div>
+
+        <figure class="product-visual" data-reveal>
+          <img
+            class="product-visual__wide"
+            src="../assets/img/furatto-town.webp"
+            alt="ふらっとの、まちづくり団体・商店街向けの画面"
+            width="1440"
+            height="900"
+            fetchpriority="high"
+          />
+          <img class="phone" src="../assets/img/furatto-home.webp" alt="ふらっとの学生向けホーム画面" width="640" height="1386" />
+        </figure>
+      </section>
+
+      <!-- ============ 課題・解決案・仕組み・展望 ============ -->
+      <div class="wrap">
+        <section class="chapter" aria-labelledby="problem-title">
+          <div class="chapter__head">
+            <span class="chapter__no">01</span>
+            <p class="chapter__label">課題</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="problem-title">時間はあるのに、行き先が決まらない。</h2>
+            <div class="prose">
+              <p>
+                授業の合間や休日の午後、時間はあるのに、結局どこにも行かないことがあります。検索すればお店は見つかりますが、どこを組み合わせてどう回るかは、自分で決めなければならないからです。
+              </p>
+              <p>
+                上京したばかりの学生は、そもそも街を知りません。一方でお店には、席が空いていて、もっと来てほしい時間帯があります。
+              </p>
+              <p>行ける時間と来てほしい時間が、うまく出会えていません。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" aria-labelledby="solution-title">
+          <div class="chapter__head">
+            <span class="chapter__no">02</span>
+            <p class="chapter__label">解決案</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="solution-title">探すのではなく、決めてくれる。</h2>
+            <div class="prose">
+              <p>
+                ふらっとは、お店を検索するアプリではなく、予定を決めるアプリです。選択肢が多いほど人は動けなくなるので、最初から3つのプランに絞って出します。
+              </p>
+              <p>
+                いつ、だれと、予算、気分を選ぶと、その時間にすいているお店をつないだプランができます。気に入ったら、そのままLINEで友だちを誘えます。
+              </p>
+              <p>お店がすることは、「来てほしい時間」を出すことだけです。</p>
+            </div>
+            <figure class="figure figure--pair chapter__extra">
+              <img
+                src="../assets/img/furatto-home.webp"
+                alt="いつ・だれと・予算・気分を選ぶ画面"
+                width="640"
+                height="1386"
+                loading="lazy"
+              />
+              <img
+                src="../assets/img/furatto-plans.webp"
+                alt="3つのプランが表示された画面"
+                width="640"
+                height="1386"
+                loading="lazy"
+              />
+            </figure>
+          </div>
+        </section>
+
+        <section class="chapter" aria-labelledby="how-title">
+          <div class="chapter__head">
+            <span class="chapter__no">03</span>
+            <p class="chapter__label">仕組み</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="how-title">学生、お店、まち。立場ごとに画面がある。</h2>
+            <div class="prose">
+              <p>
+                ふらっとは、使う立場ごとに別の画面を持っています。同じ一回の来店でも、知りたいことが立場によって違うからです。
+              </p>
+              <p>
+                学生はプランを選び、お店でチェックインします。その記録が、お店には時間帯ごとの効果として、商店街やまちづくり団体にはエリア全体の人の動きとして届きます。
+              </p>
+              <p>
+                一つの行動を、三者それぞれの役に立つ形で返す。これがふらっとの仕組みです。なお、デモではAIを使わず、決まったルールでプランを組んでいます。
+              </p>
+            </div>
+            <ul class="facts facts--four chapter__extra">
+              <li class="fact">
+                <h3 class="fact__title">学生</h3>
+                <p class="fact__text">空き時間の行き先を決めて、友だちを誘う。</p>
+              </li>
+              <li class="fact">
+                <h3 class="fact__title">お店</h3>
+                <p class="fact__text">来てほしい時間と特典を出し、効果を振り返る。</p>
+              </li>
+              <li class="fact">
+                <h3 class="fact__title">商店街・団体</h3>
+                <p class="fact__text">エリアに若い人が来ているかを確かめる。</p>
+              </li>
+              <li class="fact">
+                <h3 class="fact__title">運営</h3>
+                <p class="fact__text">全体の状況を見て、お店や団体に提案する。</p>
+              </li>
+            </ul>
+          </div>
+        </section>
+
+        <section class="chapter" aria-labelledby="future-title">
+          <div class="chapter__head">
+            <span class="chapter__no">04</span>
+            <p class="chapter__label">これからの展望</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="future-title">一つの街で、実際に試す。</h2>
+            <div class="prose">
+              <p>
+                次の一歩は、実在のお店と学生に使ってもらうことです。いまは架空の店舗データで動くデモで、本当に役に立つかは、現場で試さないと分からないからです。
+              </p>
+              <p>
+                まず一つのエリアで、協力してくれるお店を探します。集まった利用の記録は、プランの精度を上げることと、お店や団体への改善の提案に生かします。
+              </p>
+              <p>小さく始めて、うまくいった形をほかの街へ広げていきます。</p>
+            </div>
+            <p class="note">
+              「ふらっと」は仮称です。公開中のデモに登場する店名・団体名・数字は、すべて架空のサンプルです。
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ ほかのプロダクト（中身は assets/js/site-data.js の products） ============ -->
+      <section class="others wrap" aria-labelledby="others-title">
+        <p class="label" id="others-title">ほかのプロダクト</p>
+        <ul class="others__list" data-other-products="furatto"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="../assets/js/site-data.js"></script>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>

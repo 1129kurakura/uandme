@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      http-equiv="Content-Security-Policy"
+      content="default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; img-src 'self' data:; base-uri 'self'; object-src 'none'"
+    />
+    <title>都市3Dマップ｜u&amp;me</title>
+    <meta
+      name="description"
+      content="駅の中を、立体のまま案内する。駅と駅ビルを立体で表示し、道順を3Dで示す構内マップです。調布駅周辺と新宿駅周辺でつくっています。"
+    />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="都市3Dマップ｜u&me" />
+    <meta name="theme-color" content="#f4f2ed" />
+    <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..700&family=Noto+Sans+JP:wght@400;500;700;900&display=swap"
+    />
+    <link rel="stylesheet" href="../assets/css/base.css" />
+    <link rel="stylesheet" href="../assets/css/pages.css" />
+    <script src="../assets/js/boot.js"></script>
+  </head>
+  <body data-root="../">
+    <header class="site-header" id="site-header"></header>
+
+    <main class="tone-city3d">
+      <!-- ============ 紹介 ============ -->
+      <section class="wrap" aria-labelledby="product-title">
+        <p class="crumb"><a href="../index.html#products">プロダクト</a><span>/</span><span>03</span></p>
+        <h1 class="product-hero__name" id="product-title">都市3Dマップ<small>Chofu / Shinjuku</small></h1>
+        <div class="product-hero__foot">
+          <div>
+            <p class="product-hero__catch">駅の中を、立体のまま案内する。</p>
+            <p class="product-hero__lead">
+              駅と駅ビルを、階ごとの平面図ではなく立体で表示し、目的地までの道順を3Dで示す構内マップです。調布駅周辺と新宿駅周辺の2つをつくっています。
+            </p>
+          </div>
+          <div class="product-hero__actions">
+            <!-- デモを公開したら、下の1行を消して、その下のコメントを外し、href にURLを入れます -->
+            <span class="button" aria-disabled="true">デモは準備中</span>
+            <!--
+            <a class="button" href="ここにデモのURL" target="_blank" rel="noopener">
+              デモを触る <span class="arrow" aria-hidden="true">→</span>
+            </a>
+            -->
+          </div>
+        </div>
+
+        <figure class="product-visual" data-reveal>
+          <img
+            class="product-visual__wide"
+            src="../assets/img/city3d-chofu.webp"
+            alt="調布駅の立体構内マップ。ホームから映画館までの道順が3Dで表示されている"
+            width="1440"
+            height="900"
+            fetchpriority="high"
+          />
+          <img
+            class="phone"
+            src="../assets/img/city3d-phone.webp"
+            alt="調布駅の立体構内マップをスマホで表示した画面"
+            width="640"
+            height="1386"
+          />
+        </figure>
+      </section>
+
+      <!-- ============ 課題・解決案・仕組み・展望 ============ -->
+      <div class="wrap">
+        <section class="chapter" aria-labelledby="problem-title">
+          <div class="chapter__head">
+            <span class="chapter__no">01</span>
+            <p class="chapter__label">課題</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="problem-title">平面図では、上下の移動が分からない。</h2>
+            <div class="prose">
+              <p>
+                大きな駅で迷うのは、たいてい階をまたぐ場面です。階ごとに分かれた平面図では、どの階段がどこにつながるのかを、頭の中で組み立てなければならないからです。
+              </p>
+              <p>
+                新宿駅のように、複数の鉄道会社と地下街がつながる場所では、案内図そのものが運営者ごとに分かれています。車いすやベビーカーを使う人は、さらにエレベーターの位置まで調べる必要があります。
+              </p>
+              <p>つながりが一目で分かる地図が、足りていません。</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="chapter" aria-labelledby="solution-title">
+          <div class="chapter__head">
+            <span class="chapter__no">02</span>
+            <p class="chapter__label">解決案</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="solution-title">回して見られる立体の地図に、道順を重ねる。</h2>
+            <div class="prose">
+              <p>
+                駅全体を一つの立体模型として表示し、その上にルートを描きます。上下のつながりは、見れば分かる形にするのがいちばん早いからです。
+              </p>
+              <p>
+                出発地と目的地を選ぶと、道順が3Dで表示され、手順ごとのカードで確かめられます。「車いす・ベビーカー」「足腰にやさしい」「人混みを避ける」「雨にぬれにくい」といった条件でも探せます。道順はURLやQRコードで共有できます。
+              </p>
+              <p>読み解く地図ではなく、見て分かる地図を目指しています。</p>
+            </div>
+            <figure class="figure chapter__extra">
+              <img
+                src="../assets/img/city3d-shinjuku-route.webp"
+                alt="新宿駅の立体構内マップ。JR西改札から丸ノ内線の改札までの道順が表示されている"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+              <figcaption>新宿駅：JR西改札から丸ノ内線の改札までの道順</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="chapter" aria-labelledby="how-title">
+          <div class="chapter__head">
+            <span class="chapter__no">03</span>
+            <p class="chapter__label">仕組み</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="how-title">公開されているデータを、組み合わせてつくる。</h2>
+            <div class="prose">
+              <p>
+                地図は、国や地域が公開しているオープンデータからつくっています。同じつくり方を、ほかの駅にも広げられるようにするためです。
+              </p>
+              <p>
+                周辺の建物、道路と線路、駅の中の通路や設備を、それぞれ別のデータから取り込み、一つの立体にまとめています。分からない箇所は推測で埋めず、「要確認」として一覧にし、現地で確かめてから反映します。
+              </p>
+              <p>つくり方を共通にしておくことで、駅が変わっても同じ手順で地図を用意できます。</p>
+            </div>
+            <ul class="facts chapter__extra">
+              <li class="fact">
+                <h3 class="fact__title">周辺の建物</h3>
+                <p class="fact__text">国土交通省 PLATEAU の3D都市モデル。</p>
+              </li>
+              <li class="fact">
+                <h3 class="fact__title">道路・線路</h3>
+                <p class="fact__text">OpenStreetMap の地図データ。</p>
+              </li>
+              <li class="fact">
+                <h3 class="fact__title">駅の中</h3>
+                <p class="fact__text">新宿は国土交通省の屋内地図オープンデータ、調布は公開されている構内図を参照。</p>
+              </li>
+            </ul>
+            <figure class="figure chapter__extra">
+              <img
+                src="../assets/img/city3d-shinjuku.webp"
+                alt="新宿駅周辺の立体構内マップの全体表示"
+                width="1440"
+                height="900"
+                loading="lazy"
+              />
+              <figcaption>新宿駅周辺：地下でつながる駅と地下街を、一つの立体にまとめた全体表示</figcaption>
+            </figure>
+          </div>
+        </section>
+
+        <section class="chapter" aria-labelledby="future-title">
+          <div class="chapter__head">
+            <span class="chapter__no">04</span>
+            <p class="chapter__label">これからの展望</p>
+          </div>
+          <div data-reveal>
+            <h2 class="chapter__title" id="future-title">現地で確かめてから、公開する。</h2>
+            <div class="prose">
+              <p>
+                デモは、内容を現地で確かめてから公開します。道案内に使う地図は、正しいと確かめられていることが前提だからです。
+              </p>
+              <p>
+                いまは2つの駅で動く試作の段階です。まず調布で実際に歩いて確認し、その結果を地図に反映します。新宿の屋内地図は2020年8月時点のデータなので、変わった箇所の更新も進めます。
+              </p>
+              <p>そのうえで、同じ仕組みをほかの駅やまちへ広げていきます。</p>
+            </div>
+            <p class="note">
+              イチBizアワード2026への応募に向けて制作しているプロトタイプです。地図データ：国土交通省 PLATEAU、国土交通省
+              新宿駅周辺屋内地図オープンデータ、© OpenStreetMap contributors。
+            </p>
+          </div>
+        </section>
+      </div>
+
+      <!-- ============ ほかのプロダクト（中身は assets/js/site-data.js の products） ============ -->
+      <section class="others wrap" aria-labelledby="others-title">
+        <p class="label" id="others-title">ほかのプロダクト</p>
+        <ul class="others__list" data-other-products="city3d"></ul>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer"></footer>
+
+    <script src="../assets/js/site-data.js"></script>
+    <script src="../assets/js/site.js"></script>
+  </body>
+</html>
