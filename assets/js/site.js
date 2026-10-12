@@ -253,6 +253,44 @@
     targets.forEach((node) => observer.observe(node));
   };
 
+  /* ---------- オープニング（流すかどうかは boot.js が決める） ---------- */
+
+  const INTRO_SKIP_MS = 350;
+  const INTRO_FALLBACK_MS = 12000;
+
+  const setupIntro = () => {
+    const intro = document.getElementById('intro');
+    const html = document.documentElement;
+    if (!intro || !html.classList.contains('intro-on')) return;
+
+    let isFinished = false;
+    const finish = () => {
+      if (isFinished) return;
+      isFinished = true;
+      html.classList.remove('intro-on');
+      intro.remove();
+      document.removeEventListener('keydown', skip);
+      try {
+        window.sessionStorage.setItem('uandme-intro-seen', '1');
+      } catch (error) {
+        // 保存できなくても表示には影響しない（次回もオープニングが流れるだけ）
+      }
+    };
+    function skip() {
+      intro.classList.add('is-skipping');
+      window.setTimeout(finish, INTRO_SKIP_MS);
+    }
+
+    // 霧が晴れきったら片付ける
+    intro.addEventListener('animationend', (event) => {
+      if (event.target === intro) finish();
+    });
+    intro.addEventListener('click', skip);
+    document.addEventListener('keydown', skip);
+    window.setTimeout(finish, INTRO_FALLBACK_MS);
+  };
+
+  setupIntro();
   buildHeader();
   fillProducts();
   fillOtherProducts();
