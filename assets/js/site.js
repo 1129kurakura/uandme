@@ -144,7 +144,7 @@
           el('div', {}, [
             el('p', { class: 'footer__heading', text: '団体' }),
             el('ul', {}, [
-              el('li', {}, el('a', { href: href('index.html#about'), text: '私たちについて' })),
+              el('li', {}, el('a', { href: href('index.html#about'), text: '理念' })),
               el('li', {}, el('a', { href: href('index.html#news'), text: '活動' })),
               el('li', {}, el('a', { href: href('members.html'), text: 'メンバー' })),
             ]),
