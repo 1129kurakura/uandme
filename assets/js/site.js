@@ -291,7 +291,7 @@
     fontsReady.then(play, play);
     window.setTimeout(play, INTRO_FONT_WAIT_MS);
 
-    // 霧が晴れきったら片付ける
+    // フェードインが終わったら片付ける
     intro.addEventListener('animationend', (event) => {
       if (event.target === intro) finish();
     });
