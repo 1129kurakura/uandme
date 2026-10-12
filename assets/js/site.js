@@ -76,8 +76,8 @@
     return el('section', { class: 'contact', id: 'contact', 'aria-labelledby': 'contact-title' }, [
       el('div', { class: 'wrap contact__inner' }, [
         el('p', { class: 'label label--light', text: 'Contact' }),
-        el('h2', { id: 'contact-title', class: 'contact__title', text: '一緒に試してくれる方を、探しています。' }),
-        el('p', { class: 'contact__text', text: 'お店、商店街、自治体、施設の方。デモを触ってみた感想だけでも歓迎です。' }),
+        el('h2', { id: 'contact-title', class: 'contact__title', text: '一緒に活動してくださる方を、探しています。' }),
+        el('p', { class: 'contact__text', text: '学生など活動に興味のある方、お店、商店街、自治体、施設の方。プロジェクトを一緒に作ってくださる仲間を募集しています。' }),
         actions,
       ]),
     ]);
