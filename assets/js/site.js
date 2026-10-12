@@ -45,7 +45,7 @@
   };
 
   const buildPendingDialog = () => {
-    const closeButton = el('button', { type: 'button', class: 'button button--ghost', text: 'とじる' });
+    const closeButton = el('button', { type: 'button', class: 'button button--ghost', text: 'close' });
     const dialog = el('dialog', { class: 'dialog', 'aria-labelledby': 'pending-title' }, [
       el('p', { class: 'dialog__label', text: 'Contact' }),
       el('h2', { id: 'pending-title', class: 'dialog__title', text: 'お問い合わせ窓口は準備中です' }),
@@ -100,12 +100,12 @@
 
     const list = el('ul', { class: 'nav__list', id: 'nav-list' }, NAV.map((item) => el('li', {}, navLink(item))));
     const toggle = el('button', { type: 'button', class: 'nav__toggle', 'aria-expanded': 'false', 'aria-controls': 'nav-list' }, [
-      el('span', { class: 'nav__toggle-text', text: 'メニュー' }),
+      el('span', { class: 'nav__toggle-text', text: 'menu' }),
     ]);
     const setOpen = (isOpen) => {
       mount.classList.toggle('is-open', isOpen);
       toggle.setAttribute('aria-expanded', String(isOpen));
-      toggle.firstChild.textContent = isOpen ? 'とじる' : 'メニュー';
+      toggle.firstChild.textContent = isOpen ? 'close' : 'menu';
     };
     toggle.addEventListener('click', () => setOpen(!mount.classList.contains('is-open')));
     list.addEventListener('click', (event) => {
